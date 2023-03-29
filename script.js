@@ -4,15 +4,15 @@ var losses = 0;
 var ties = 0;
 var continuePlaying = true;
 
-
 //While loop to decide whether user wants to continue playing//
 
 
     //User Choice//
     function pickRPS() {
         var RPorS = prompt("Pick r, p, or s.", "r" );
-        if (RPorS !== null || RPorS === "r" || RPorS === "p" || RPorS === "s") {
+        if (RPorS === "r" || RPorS === "p" || RPorS === "s") {
             window.alert("You picked " + RPorS);
+            choiceIsInvalid = false;
             return RPorS;
         }
         else {
@@ -82,16 +82,16 @@ var continuePlaying = true;
 
     //Showing scores//
 function showScores() {
-    window.alert
+    window.alert("Current Score\ Wins: " + wins + "\Losses: " + losses + "\Ties: " + ties);
 }
     
 
 while (continuePlaying === true) {
-    var pick = pickRPS();
-    computerChoice();
-    comparePicks(pick);
-    showScores();
-    
+   
+        var pick = pickRPS();
+        computerChoice();
+        comparePicks(pick);
+        showScores();
 
     //Ask user if they want to play again//
     if (window.confirm("Do you want to play again?")) {
