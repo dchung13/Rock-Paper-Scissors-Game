@@ -1,4 +1,4 @@
-var userInput = RPorS;
+
 var wins = 0;
 var losses = 0;
 var ties = 0;
@@ -6,7 +6,7 @@ var continuePlaying = true;
 
 
 //While loop to decide whether user wants to continue playing//
-while (continuePlaying === true) {
+
 
     //User Choice//
     function pickRPS() {
@@ -40,7 +40,7 @@ while (continuePlaying === true) {
             return computerPick = computerSelections[1];
         }
 
-        else (getRndNum(computerSelections.length) === 2) {
+        else {
             window.alert("Computer chose Scissors.");
             return computerPick = computerSelections[2];
         }
@@ -49,7 +49,7 @@ while (continuePlaying === true) {
 
     //Compare User Choice vs Computer Choice and increase score counter//
 
-    function comparePicks() {
+    function comparePicks(userInput) {
         if (userInput === computerPick) {
             window.alert("It was a tie.");
             ties++;
@@ -81,15 +81,24 @@ while (continuePlaying === true) {
     }
 
     //Showing scores//
-    window.alert("The score is ", "Wins:" + wins + "Ties: " + ties + "Losses: " + losses);
+function showScores() {
+    window.alert
+}
+    
+
+while (continuePlaying === true) {
+    var pick = pickRPS();
+    computerChoice();
+    comparePicks(pick);
+    showScores();
+    
 
     //Ask user if they want to play again//
     if (window.confirm("Do you want to play again?")) {
-        return continuePlaying = true;
+        
     }
     else {
         window.alert("Thanks for playing!");
-        return continuePlaying = false;
+        continuePlaying = false;
     }
-
 }
